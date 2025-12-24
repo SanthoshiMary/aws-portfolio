@@ -1,0 +1,273 @@
+/* =====================
+   Global Styles
+===================== */
+:root {
+  --primary: #7c3aed;   /* Violet */
+  --secondary: #9333ea; /* Purple */
+  --accent: #facc15;    /* Gold */
+  --bg-light: #faf5ff;
+  --bg-dark: #1e1b4b;
+  --text-light: #ffffff;
+  --text-dark: #1e293b;
+  --card-light: #ffffff;
+  --card-dark: #1e293b;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg-light);
+  color: var(--text-dark);
+  line-height: 1.7;
+}
+
+/* =====================
+   Dark Mode
+===================== */
+body.dark {
+  background: var(--bg-dark);
+  color: var(--text-light);
+}
+
+/* =====================
+   Navbar
+===================== */
+.navbar {
+  position: sticky;
+  top: 0;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  padding: 15px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+
+.logo {
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin-left: 20px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #ffe082;
+}
+
+/* =====================
+   Hero Section
+===================== */
+.hero {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #7c3aed, #9333ea, #facc15);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.hero h1 {
+  font-size: 36px;
+  animation: fadeDown 1s ease;
+}
+
+.hero h1 span {
+  color: #ffe082;
+}
+
+.hero p {
+  margin: 15px 0 25px;
+  font-size: 18px;
+  animation: fadeUp 1.2s ease;
+}
+
+.btn {
+  background: white;
+  color: var(--primary);
+  padding: 12px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: var(--accent);
+  color: white;
+  transform: translateY(-3px);
+}
+
+/* =====================
+   Sections
+===================== */
+.section {
+  padding: 70px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.section h2 {
+  font-size: 28px;
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.section h2::after {
+  content: "";
+  width: 60px;
+  height: 4px;
+  background: var(--primary);
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  border-radius: 2px;
+}
+
+/* =====================
+   Skills
+===================== */
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.skills-grid span {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  padding: 10px 18px;
+  border-radius: 25px;
+  font-size: 14px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.skills-grid span:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* =====================
+   Projects
+===================== */
+.project-card {
+  background: var(--card-light);
+  padding: 25px;
+  margin-bottom: 25px;
+  border-radius: 15px;
+  border-left: 6px solid var(--accent);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+body.dark .project-card {
+  background: var(--card-dark);
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+/* =====================
+   Certifications
+===================== */
+.cert-list {
+  padding-left: 20px;
+}
+
+.cert-list li {
+  margin-bottom: 10px;
+}
+
+/* =====================
+   Contact Links
+===================== */
+#contact a {
+  color: var(--primary);
+  font-weight: 500;
+}
+
+#contact a:hover {
+  color: var(--accent);
+}
+
+/* =====================
+   Footer
+===================== */
+footer {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+/* =====================
+   Animations
+===================== */
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* =====================
+   Scroll Reveal
+===================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =====================
+   Mobile First
+===================== */
+@media (min-width: 768px) {
+  .hero h1 {
+    font-size: 48px;
+  }
+
+  .hero p {
+    font-size: 20px;
+  }
+
+  .section h2 {
+    font-size: 32px;
+  }
+}
